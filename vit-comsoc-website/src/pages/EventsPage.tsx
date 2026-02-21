@@ -41,8 +41,8 @@ function EventsPage() {
   const regularEvents = events.filter(event => !event.isHighlight);
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-12 bg-void">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-12">
+    <div className="min-h-screen flex flex-col items-center px-4 py-12 relative">
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-white mb-12 text-glow-hollow">
         Riviera Fest & ComSoc Events
       </h1>
 

@@ -5,7 +5,7 @@ const MotionLink = motion(Link);
 
 function LandingPage() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center bg-void px-4 sm:px-6 lg:px-8 py-16 sm:py-24 overflow-hidden">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24 overflow-hidden relative">
       {/* Subtle grid background for tech feel */}
       <div
         className="absolute inset-0 bg-[linear-gradient(rgba(0,229,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"
@@ -29,12 +29,12 @@ function LandingPage() {
           transition={{ duration: 0.5 }}
           className="mb-4 sm:mb-6"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white text-glow-hollow">
             <span className="block">Where</span>
             <span className="block bg-gradient-to-r from-trace via-quantum to-trace bg-clip-text text-transparent">
               Software, Hardware & Communications
             </span>
-            <span className="block">Converge</span>
+            <span className="block text-gradient-stroke-hollow">Converges</span>
           </h1>
         </motion.div>
 
@@ -45,7 +45,7 @@ function LandingPage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mb-8 sm:mb-10"
         >
-          <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
             We build, hack, and connect. From embedded systems and circuits to networks and software—our chapter brings together engineers who shape the future of communications technology.
           </p>
         </motion.div>

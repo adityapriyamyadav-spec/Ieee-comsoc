@@ -12,11 +12,15 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
   return (
     <motion.article
     className={`
-      relative flex flex-col h-full rounded-xl p-5 sm:p-6 transition-colors duration-300
+      relative flex flex-col h-full rounded-xl p-5 sm:p-6
+      bg-glass backdrop-blur-md
+      border-t border-l border-white/10 border-b border-r border-white/5
+      shadow-[0_20px_50px_rgba(0,0,0,0.5)]
+      transition-colors duration-500
       hover:shadow-lg
       ${isHighlight
-        ? 'bg-gradient-to-br from-trace/15 via-surface to-quantum/15 border-2 border-trace/50 shadow-md shadow-trace/10 hover:shadow-trace/20 hover:shadow-xl'
-        : 'bg-surface/90 border border-trace/20 hover:border-trace/40 hover:shadow-void/50'
+        ? 'border-trace/50 hover:shadow-trace/20 hover:shadow-xl'
+        : 'hover:border-trace/40'
       }
     `}
       /* MATCHING LANDING PAGE PHYSICS */
@@ -39,7 +43,7 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
         <h3 className="mt-2 text-lg sm:text-xl font-bold text-white">
           {title}
         </h3>
-        <p className="mt-2 text-sm text-white/80 leading-relaxed flex-grow">
+        <p className="mt-2 text-sm text-white/70 leading-relaxed flex-grow">
           {description}
         </p>
         {tags.length > 0 && (
