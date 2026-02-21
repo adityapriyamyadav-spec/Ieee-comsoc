@@ -29,9 +29,9 @@ function LandingPage() {
           transition={{ duration: 0.5 }}
           className="mb-4 sm:mb-6"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white text-glow-hollow">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white">
             <span className="block">Where</span>
-            <span className="block bg-gradient-to-r from-trace via-quantum to-trace bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-trace/90 via-quantum/80 to-trace/90 bg-clip-text text-transparent">
               Software, Hardware & Communications
             </span>
             <span className="block text-gradient-stroke-hollow">Converges</span>

@@ -18,18 +18,13 @@
   color: transparent;
 }
 
-/* Subtle glow for hollow headers */
-.text-glow-hollow {
-  filter: drop-shadow(0 0 8px var(--color-trace));
-}
-
-/* Keyword: hollow with gradient stroke (trace → quantum) — stroke via gradient fill + trace outline */
+/* Keyword: subtle gradient fill with a soft outline (no glow) */
 .text-gradient-stroke-hollow {
   background: linear-gradient(to right, var(--color-trace), var(--color-quantum));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px rgba(0, 229, 255, 0.4);
+  -webkit-text-stroke: 1px rgba(0, 229, 255, 0.25);
   paint-order: stroke fill;
 }
 
@@ -77,4 +72,30 @@ html, body {
 
 html.dark body {
   background-color: var(--color-void);
+}
+
+/* Footer: always visible in dark mode — uses html.dark so it works regardless of Tailwind */
+html.dark footer {
+  background-color: var(--color-surface) !important;
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+}
+html.dark footer h3 {
+  color: #fff !important;
+}
+html.dark footer p,
+html.dark footer a {
+  color: #cbd5e1 !important;
+}
+html.dark footer a:hover {
+  color: var(--color-trace) !important;
+}
+html.dark footer h4 {
+  color: #e2e8f0 !important;
+}
+html.dark footer .mt-10.pt-6 {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+html.dark footer .text-xs {
+  color: #94a3b8 !important;
 }
