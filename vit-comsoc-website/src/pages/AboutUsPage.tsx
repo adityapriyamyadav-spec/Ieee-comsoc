@@ -26,12 +26,12 @@ const teamMembers = [
 
 function AboutUsPage() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden relative">
+    <section className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden relative bg-day dark:bg-void transition-colors duration-500">
       
       {/* HEADER SECTION */}
       <div className="w-full max-w-3xl text-center mb-12">
         <motion.h1
-          className="text-4xl md:text-5xl font-bold text-white mb-4 text-glow-hollow"
+          className="text-4xl md:text-5xl font-bold text-text-light dark:text-white mb-4"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -39,7 +39,7 @@ function AboutUsPage() {
           About IEEE ComSoc · VIT Vellore
         </motion.h1>
         <motion.p 
-          className="text-lg md:text-xl text-white/70 leading-relaxed"
+          className="text-lg md:text-xl text-text-light/80 dark:text-white/70 leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -79,7 +79,7 @@ function AboutUsPage() {
         whileInView="visible"
         viewport={{ once: true, margin: '-50px' }}
       >
-        <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-white mb-10 text-glow-hollow">
+        <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-text-light dark:text-white mb-10">
           Meet the Core Team
         </motion.h2>
         
