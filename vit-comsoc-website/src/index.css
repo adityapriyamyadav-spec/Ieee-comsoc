@@ -1,12 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  --color-void: #05050A;
-  --color-surface: #12121A;
-  --color-trace: #00E5FF;
-  --color-quantum: #B026FF;
+  /* Editorial Tech palette */
+  --color-void: #020617;
+  --color-surface: #0f172a;
+  --color-trace: #00e5ff;
+  --color-accent: #6366f1; /* indigo */
+  --color-day: #f8fafc;
+  --color-card-light: #ffffff;
+  --color-text-light: #1e293b;
 }
 
+@utility text-hollow {
+  -webkit-text-stroke: 1.5px currentColor;
+  color: transparent;
+}
+
+/* Mesh overlay color: trace (dark) / accent (light) — set by ThemeToggle on html */
+html { --mesh-overlay: var(--color-accent); }
+html.dark { --mesh-overlay: var(--color-trace); }
+
+.bg-mesh-overlay {
+  background-image: radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in srgb, var(--mesh-overlay) 18%, transparent) 0%, transparent 55%);
+}
+
+/* Smooth theme transition on root */
+html { transition: background-color 500ms ease, color 500ms ease; }
+
+/* Dark variant: when .dark is on the root (document.documentElement) */
+@variant dark (&:where(.dark, .dark *));
+/* Apply the theme colors to the entire browser window */
 html, body {
+  @apply transition-colors duration-500;
+  /* Match your Landing Page background tokens */
+  background-color: var(--color-void);
+}
+
+/* Update the background when the .dark class is absent (Light Mode) */
+html:not(.dark), body:not(.dark) {
+  background-color: var(--color-day);
+}
+
+/* Optional: Disable the bounce entirely if you hate it */
+/* html {
   overscroll-behavior: none;
+}
+*/
+html, body {
+  /* Prevents the 'bounce' effect at the top and bottom of the page */
+  overscroll-behavior: none;
+  
+  /* Ensures the container always takes up at least the full height */
+  min-height: 100%;
+  
+  /* Keeps the theme consistent if the user tries to scroll anyway */
+  @apply transition-colors duration-500;
+  background-color: var(--color-void);
+}
+
+html.dark body {
+  background-color: var(--color-day);
 }
