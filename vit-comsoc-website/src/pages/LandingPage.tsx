@@ -5,7 +5,7 @@ const MotionLink = motion(Link);
 
 function LandingPage() {
   return (
-    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24 overflow-hidden relative bg-day dark:bg-void transition-colors duration-500">
+    <section className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24 overflow-hidden relative bg-transparent">
       {/* Subtle grid background for tech feel */}
       <div
         className="absolute inset-0 bg-[linear-gradient(rgba(0,229,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"

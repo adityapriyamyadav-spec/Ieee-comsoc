@@ -4,7 +4,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-200/50 dark:bg-surface border-t border-slate-300 dark:border-white/5 text-slate-600 transition-colors duration-500">
+    <footer className="bg-white/70 backdrop-blur-lg dark:bg-void/60 border-t border-slate-300 dark:border-white/5 text-slate-600 transition-colors duration-500">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand & tagline */}

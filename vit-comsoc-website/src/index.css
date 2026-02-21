@@ -7,10 +7,10 @@
   --color-surface: #0f172a;
   --color-trace: #00e5ff;
   --color-quantum: #a78bfa;
-  --color-accent: #6366f1; /* indigo highlight for light mode */
-  --color-day: #f1f5f9; /* Eye-Care light mode — no white */
-  --color-card-light: #f1f5f9;
-  --color-text-light: #334155; /* Deep charcoal — reduces contrast strain */
+  --color-accent: #6366f1;
+  --color-day: #f1f5f9; /* The Eye-Care Base */
+  --color-text-light: #334155;
+  --color-card-light: #f8fafc;
 }
 
 /* Flat hollow text: stroke only, zero drop-shadow or text-shadow */
@@ -49,70 +49,24 @@ html.dark { --mesh-overlay: var(--color-trace); }
   background-image: radial-gradient(ellipse 80% 50% at 50% 0%, color-mix(in srgb, var(--mesh-overlay) 18%, transparent) 0%, transparent 55%);
 }
 
-/* Smooth theme transition on root */
-html { transition: background-color 500ms ease, color 500ms ease; }
-
 /* Dark variant: when .dark is on the root (document.documentElement) */
 @variant dark (&:where(.dark, .dark *));
-/* Root: enforce day/void background to prevent white deadzone on scroll bounce */
+
+/* Force Global Backgrounds */
 html,
 body {
+  transition: background-color 500ms ease;
   overscroll-behavior: none;
-  min-height: 100%;
-  transition: background-color 500ms ease, color 500ms ease;
+}
+html:not(.dark),
+html:not(.dark) body,
+html:not(.dark) #root,
+html:not(.dark) main {
+  background-color: #f1f5f9 !important;
+  color: #334155 !important;
 }
 html.dark,
 html.dark body {
-  background-color: var(--color-void);
-}
-html:not(.dark),
-html:not(.dark) body {
-  background-color: var(--color-day);
-}
-
-/* Footer: always visible in dark mode — uses html.dark so it works regardless of Tailwind */
-html.dark footer {
-  background-color: var(--color-surface) !important;
-  border-top-color: rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
-}
-html.dark footer h3 {
-  color: #fff !important;
-}
-html.dark footer p,
-html.dark footer a {
-  color: #cbd5e1 !important;
-}
-html.dark footer a:hover {
-  color: var(--color-trace) !important;
-}
-html.dark footer h4 {
-  color: #e2e8f0 !important;
-}
-html.dark footer .mt-10.pt-6 {
-  border-top-color: rgba(255, 255, 255, 0.1);
-}
-html.dark footer .text-xs {
-  color: #94a3b8 !important;
-}
-
-/* Light mode footer — readable labels */
-html:not(.dark) footer {
-  color: #475569; /* slate-600 */
-}
-html:not(.dark) footer h3 {
-  color: #1e293b !important; /* slate-800 */
-}
-html:not(.dark) footer h4 {
-  color: #475569 !important;
-}
-html:not(.dark) footer p,
-html:not(.dark) footer a {
-  color: #64748b !important; /* slate-500 */
-}
-html:not(.dark) footer a:hover {
-  color: var(--color-accent) !important;
-}
-html:not(.dark) footer .text-xs {
-  color: #64748b !important;
+  background-color: var(--color-void) !important;
+  color: white;
 }

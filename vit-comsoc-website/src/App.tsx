@@ -8,7 +8,7 @@ import AboutUsPage from './pages/AboutUsPage';
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen flex flex-col transition-colors duration-500">
+      <div className="min-h-screen flex flex-col bg-transparent transition-colors duration-500">
         {/* Fixed linear gradient in dark mode — sits behind all content */}
         <div
           className="fixed inset-0 z-0 pointer-events-none opacity-0 dark:opacity-100 transition-opacity duration-500"
@@ -16,9 +16,9 @@ function App() {
           aria-hidden
         />
         {/* Wrapper so Navbar + Main + Footer all stack above the fixed overlay */}
-        <div className="relative z-10 flex flex-col min-h-screen flex-1">
+        <div className="relative z-10 flex flex-col min-h-screen flex-1 bg-transparent">
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow bg-transparent">
             <Routes>
               <Route path="/" element={<LandingPage />} />
               <Route path="/events" element={<EventsPage />} />

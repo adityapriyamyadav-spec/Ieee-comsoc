@@ -13,8 +13,8 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
     <motion.article
     className={`
       relative flex flex-col h-full rounded-xl p-5 sm:p-6
-      bg-[#f8fafc] dark:bg-glass backdrop-blur-md
-      border border-slate-300/30 dark:border-t dark:border-l dark:border-white/10 dark:border-b dark:border-r dark:border-white/5
+      bg-white/30 backdrop-blur-sm dark:bg-glass
+      border border-slate-200/50 dark:border-t dark:border-l dark:border-white/10 dark:border-b dark:border-r dark:border-white/5
       shadow-[0_20px_50px_rgba(0,0,0,0.5)]
       transition-colors duration-500
       hover:shadow-lg

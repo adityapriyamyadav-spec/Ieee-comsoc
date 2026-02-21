@@ -10,7 +10,7 @@ function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-slate-300/60 dark:border-trace/20 bg-slate-200/90 dark:bg-void/80 backdrop-blur-md transition-colors duration-500">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-300/60 dark:border-trace/20 bg-white/70 backdrop-blur-lg dark:bg-void/60 transition-colors duration-500">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -57,7 +57,7 @@ function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden border-t border-slate-300/60 dark:border-trace/20 bg-slate-200/95 dark:bg-surface"
+            className="md:hidden border-t border-slate-300/60 dark:border-trace/20 bg-white/70 backdrop-blur-lg dark:bg-void/60"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
