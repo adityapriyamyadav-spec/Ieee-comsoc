@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #05050A;
+  --color-surface: #12121A;
+  --color-trace: #00E5FF;
+  --color-quantum: #B026FF;
+}
+
+html, body {
+  overscroll-behavior: none;
+}
