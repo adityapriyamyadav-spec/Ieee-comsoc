@@ -37,6 +37,12 @@ function Footer() {
                 Events
               </Link>
               <Link
+                to="/projects"
+                className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-sm"
+              >
+                Projects
+              </Link>
+              <Link
                 to="/about"
                 className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-sm"
               >

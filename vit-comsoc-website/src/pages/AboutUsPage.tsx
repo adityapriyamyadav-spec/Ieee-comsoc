@@ -27,83 +27,97 @@ const teamMembers = [
 function AboutUsPage() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-12 sm:py-16 overflow-hidden relative bg-transparent">
-      
-      {/* HEADER SECTION */}
-      <div className="w-full max-w-3xl text-center mb-12">
-        <motion.h1
-          className="text-4xl md:text-5xl font-bold text-text-light dark:text-white mb-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          About IEEE ComSoc · VIT Vellore
-        </motion.h1>
-        <motion.p 
-          className="text-lg md:text-xl text-text-light/80 dark:text-white/70 leading-relaxed"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          We unite passionate engineers and innovators in software, hardware, and communications. Our focus: learning, building, and pushing the boundaries of tech together.
-        </motion.p>
-      </div>
-      
-      {/* MISSION / VISION GRID */}
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl mb-24"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
-        <motion.div variants={itemVariants} whileHover={{ y: -5 }} className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-trace/50">
-          <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-trace mb-3">Our Mission</h2>
-          <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
-            To foster a community where budding engineers collaborate, experiment, and excel in both software and hardware realms—from embedded systems and networking, to coding and real-world problem solving.
-          </p>
-        </motion.div>
+      {/* Subtle grid background for tech feel (shared with landing) */}
+      <div
+        className="absolute inset-0 bg-[linear-gradient(rgba(0,229,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"
+        aria-hidden
+      />
 
-        <motion.div variants={itemVariants} whileHover={{ y: -5 }} className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-quantum/50">
-          <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-quantum mb-3">Our Vision</h2>
-          <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
-            To spark groundbreaking innovation in communications technology, building an ecosystem where future leaders drive change and shape the digital world of tomorrow.
-          </p>
-        </motion.div>
-      </motion.div>
-
-      {/* MEET THE TEAM SECTION */}
-      <motion.div 
-        className="w-full max-w-5xl"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-50px' }}
-      >
-        <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-text-light dark:text-white mb-10">
-          Meet the Core Team
-        </motion.h2>
-        
-        {/* Dynamic 5-column responsive grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-          {teamMembers.map((member) => (
-            <motion.div 
-              key={member.id}
-              variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-xl p-5 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-trace/40"
-            >
-              {/* Placeholder Avatar */}
-              <div className="w-16 h-16 rounded-full bg-void border-2 border-trace/30 flex items-center justify-center mb-4">
-                <span className="text-trace font-bold">{member.name.charAt(0)}</span>
-              </div>
-              <h3 className="text-lg font-semibold text-text-light dark:text-white">{member.name}</h3>
-              <p className="text-sm font-medium text-text-light dark:text-trace mt-1">{member.role}</p>
-              <p className="text-xs text-text-light/80 dark:text-slate-300 mt-2 bg-slate-200/60 dark:bg-void/50 px-2 py-1 rounded-md">{member.discipline}</p>
-            </motion.div>
-          ))}
+      <div className="relative w-full max-w-6xl mx-auto">
+        {/* HEADER SECTION */}
+        <div className="w-full max-w-3xl text-center mb-12 mx-auto">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-text-light dark:text-white mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            About IEEE ComSoc · VIT Vellore
+          </motion.h1>
+          <motion.p 
+            className="text-lg md:text-xl text-text-light/80 dark:text-white/70 leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            We unite passionate engineers and innovators in software, hardware, and communications. Our focus: learning, building, and pushing the boundaries of tech together.
+          </motion.p>
         </div>
-      </motion.div>
+        
+        {/* MISSION / VISION GRID */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 w-full max-w-4xl mb-24 mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+          >
+            <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-trace mb-3">Our Mission</h2>
+            <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
+              To foster a community where budding engineers collaborate, experiment, and excel in both software and hardware realms—from embedded systems and networking, to coding and real-world problem solving.
+            </p>
+          </motion.div>
 
+          <motion.div
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+          >
+            <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-quantum mb-3">Our Vision</h2>
+            <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
+              To spark groundbreaking innovation in communications technology, building an ecosystem where future leaders drive change and shape the digital world of tomorrow.
+            </p>
+          </motion.div>
+        </motion.div>
+
+        {/* MEET THE TEAM SECTION */}
+        <motion.div 
+          className="w-full max-w-5xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+        >
+          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-center text-text-light dark:text-white mb-10">
+            Meet the Core Team
+          </motion.h2>
+          
+          {/* Dynamic 5-column responsive grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {teamMembers.map((member) => (
+              <motion.div
+                key={member.id}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-xl p-5 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+              >
+                {/* Placeholder Avatar */}
+                <div className="w-16 h-16 rounded-full bg-void border-2 border-trace/30 flex items-center justify-center mb-4">
+                  <span className="text-trace font-bold">{member.name.charAt(0)}</span>
+                </div>
+                <h3 className="text-lg font-semibold text-text-light dark:text-white">{member.name}</h3>
+                <p className="text-sm font-medium text-text-light dark:text-trace mt-1">{member.role}</p>
+                <p className="text-xs text-text-light/80 dark:text-slate-300 mt-2 bg-slate-200/60 dark:bg-void/50 px-2 py-1 rounded-md">{member.discipline}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }

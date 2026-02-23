@@ -24,6 +24,7 @@ function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8">
               <Link to="/" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Home</Link>
               <Link to="/events" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Events</Link>
+              <Link to="/projects" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</Link>
               <Link to="/about" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">About Us</Link>
             </div>
             <ThemeToggle />
@@ -66,6 +67,7 @@ function Navbar() {
             <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
               <Link to="/" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Home</Link>
               <Link to="/events" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Events</Link>
+              <Link to="/projects" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Projects</Link>
               <Link to="/about" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">About Us</Link>
             </div>
           </motion.div>

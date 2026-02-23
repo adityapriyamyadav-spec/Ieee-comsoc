@@ -17,10 +17,10 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
       border border-slate-200/50 dark:border-t dark:border-l dark:border-white/10 dark:border-b dark:border-r dark:border-white/5
       shadow-[0_20px_50px_rgba(0,0,0,0.5)]
       transition-colors duration-500
-      hover:shadow-lg
+      hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10
       ${isHighlight
-        ? 'dark:border-trace/50 hover:shadow-trace/20 hover:shadow-xl dark:hover:shadow-trace/20'
-        : 'hover:border-slate-300/80 dark:hover:border-trace/40'
+        ? 'dark:border-trace/50'
+        : ''
       }
     `}
       /* MATCHING LANDING PAGE PHYSICS */

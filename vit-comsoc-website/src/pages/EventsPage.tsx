@@ -41,23 +41,31 @@ function EventsPage() {
   const regularEvents = events.filter(event => !event.isHighlight);
 
   return (
-    <div className="min-h-screen flex flex-col items-center px-4 py-12 relative bg-transparent">
-      <h1 className="text-4xl md:text-5xl font-bold text-center text-text-light dark:text-white mb-12">
-        Riviera Fest & ComSoc Events
-      </h1>
+    <div className="min-h-screen flex flex-col items-center px-4 py-12 relative bg-transparent overflow-hidden">
+      {/* Subtle grid background for tech feel (shared with landing) */}
+      <div
+        className="absolute inset-0 bg-[linear-gradient(rgba(0,229,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,229,255,0.04)_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none"
+        aria-hidden
+      />
 
-      {/* Highlight Section (Riviera) */}
-      <div className="w-full max-w-6xl mb-16">
-        {highlightEvents.map((event) => (
-          <EventCard key={event.id} {...event} />
-        ))}
-      </div>
+      <div className="relative w-full max-w-6xl mx-auto">
+        <h1 className="text-4xl md:text-5xl font-bold text-center text-text-light dark:text-white mb-12">
+          Riviera Fest & ComSoc Events
+        </h1>
 
-      {/* Standard Grid Section (Expos) */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 w-full max-w-6xl">
-        {regularEvents.map((event) => (
-          <EventCard key={event.id} {...event} />
-        ))}
+        {/* Highlight Section (Riviera) */}
+        <div className="w-full mb-16">
+          {highlightEvents.map((event) => (
+            <EventCard key={event.id} {...event} />
+          ))}
+        </div>
+
+        {/* Standard Grid Section (Expos) */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 lg:grid-cols-3 w-full">
+          {regularEvents.map((event) => (
+            <EventCard key={event.id} {...event} />
+          ))}
+        </div>
       </div>
     </div>
   );
