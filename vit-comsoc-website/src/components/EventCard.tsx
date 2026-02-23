@@ -13,9 +13,9 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
     <motion.article
     className={`
       relative flex flex-col h-full rounded-xl p-5 sm:p-6
-      bg-white/70 dark:bg-slate-800/60 backdrop-blur-md
+      bg-white/85 dark:bg-slate-800/75 backdrop-blur-sm
       border border-slate-300 dark:border-slate-700
-      transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden
+      transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-quantum hover:bg-white/90 dark:hover:border-quantum dark:hover:bg-slate-800/90 z-10 overflow-hidden
       ${isHighlight
         ? 'dark:border-trace/50'
         : ''
@@ -26,7 +26,7 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
             <div className="relative flex flex-col flex-grow">
-        <time className="text-sm font-medium text-accent dark:text-trace" dateTime={date}>
+        <time className="text-sm font-medium text-quantum" dateTime={date}>
           {date}
         </time>
         <h3 className="mt-2 text-lg sm:text-xl font-bold text-text-light dark:text-white">
@@ -43,8 +43,8 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
                   className={`
                     inline-block rounded-full px-3 py-1 text-xs font-medium
                     ${isHighlight
-                      ? 'bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20'
-                      : 'bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20'
+                      ? 'bg-quantum/15 text-quantum border border-quantum/30 dark:bg-void/60 dark:text-quantum/90 dark:border-quantum/20'
+                      : 'bg-quantum/15 text-quantum border border-quantum/30 dark:bg-void/60 dark:text-quantum/90 dark:border-quantum/20'
                     }
                   `}
                 >

@@ -34,6 +34,38 @@ function EventsPage() {
       tags: ['Cultural', 'Sports', 'Proshows'],
       isHighlight: true,
     },
+    {
+      id: 'embedded-c-rtos',
+      title: 'Embedded C & RTOS Fundamentals',
+      date: 'Feb 2026',
+      description: 'Exploring real-time operating systems and hardware-level C optimization.',
+      tags: ['Workshop', 'Embedded Systems'],
+      isHighlight: false,
+    },
+    {
+      id: 'network-security-cryptography',
+      title: 'Network Security & Cryptography Workshop',
+      date: 'Dec 2025',
+      description: 'Deep dive into secure data transmission and encryption protocols.',
+      tags: ['Workshop', 'Security', 'Cryptography'],
+      isHighlight: false,
+    },
+    {
+      id: '5g-infrastructure-edge',
+      title: '5G Infrastructure & Edge Computing',
+      date: 'Nov 2025',
+      description: 'A seminar on the evolution of cellular networks and low-latency communication.',
+      tags: ['Seminar', '5G', 'Edge Computing'],
+      isHighlight: false,
+    },
+    {
+      id: 'python-data-communications',
+      title: 'Python for Data Communications',
+      date: 'Sept 2025',
+      description: 'Leveraging Python for signal processing and automated network testing.',
+      tags: ['Workshop', 'Python', 'Data Communications'],
+      isHighlight: false,
+    },
   ];
 
   // Separate the highlighted event from the standard expos

@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [isSocialsExpanded, setIsSocialsExpanded] = useState(false);
 
   return (
     <footer className="bg-white/70 backdrop-blur-lg dark:bg-void/60 border-t border-slate-300 dark:border-white/5 text-slate-600 transition-colors duration-500">
@@ -48,6 +50,62 @@ function Footer() {
               >
                 About Us
               </Link>
+              
+              {/* Expandable Socials Tab */}
+              <button
+                onClick={() => setIsSocialsExpanded(!isSocialsExpanded)}
+                className="text-slate-600 dark:text-slate-400 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-sm text-left flex items-center gap-1"
+              >
+                Socials
+                <svg 
+                  className={`w-3 h-3 transition-transform duration-200 ${isSocialsExpanded ? 'rotate-90' : ''}`} 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              {/* Expandable Socials Content */}
+              {isSocialsExpanded && (
+                <div className="ml-2 flex flex-col gap-2 animate-in slide-in-from-top-2 duration-200">
+                  <a
+                    href="https://www.linkedin.com/company/ieee-comsoc-vit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 dark:text-slate-500 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-xs flex items-center gap-2"
+                  >
+                    <span className="w-4 h-4 rounded bg-quantum/10 flex items-center justify-center text-quantum text-xs">in</span>
+                    LinkedIn
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ieee_comsoc_vit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 dark:text-slate-500 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-xs flex items-center gap-2"
+                  >
+                    <span className="w-4 h-4 rounded bg-quantum/10 flex items-center justify-center text-quantum text-xs">ig</span>
+                    Instagram
+                  </a>
+                  <a
+                    href="https://github.com/ieee-comsoc-vit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-500 dark:text-slate-500 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-xs flex items-center gap-2"
+                  >
+                    <span className="w-4 h-4 rounded bg-quantum/10 flex items-center justify-center text-quantum text-xs">gh</span>
+                    GitHub
+                  </a>
+                  <a
+                    href="mailto:comsoc@vit.ac.in"
+                    className="text-slate-500 dark:text-slate-500 hover:text-accent dark:hover:text-trace transition-colors duration-200 text-xs flex items-center gap-2"
+                  >
+                    <span className="w-4 h-4 rounded bg-quantum/10 flex items-center justify-center text-quantum text-xs">@</span>
+                    Email
+                  </a>
+                </div>
+              )}
             </nav>
           </div>
         </div>

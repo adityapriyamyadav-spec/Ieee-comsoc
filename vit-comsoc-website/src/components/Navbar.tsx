@@ -26,6 +26,7 @@ function Navbar() {
               <Link to="/events" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Events</Link>
               <Link to="/projects" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Projects</Link>
               <Link to="/about" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">About Us</Link>
+              <Link to="/contact" className="text-slate-600 hover:text-accent dark:text-white/80 dark:hover:text-trace transition-colors px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
             </div>
             <ThemeToggle />
           </div>
@@ -69,6 +70,7 @@ function Navbar() {
               <Link to="/events" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Events</Link>
               <Link to="/projects" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Projects</Link>
               <Link to="/about" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">About Us</Link>
+              <Link to="/contact" onClick={closeMenu} className="block text-slate-700 hover:text-accent dark:text-white/90 dark:hover:text-trace hover:bg-slate-300/50 dark:hover:bg-void/50 px-3 py-2 rounded-md text-base font-medium">Contact</Link>
             </div>
           </motion.div>
         )}
