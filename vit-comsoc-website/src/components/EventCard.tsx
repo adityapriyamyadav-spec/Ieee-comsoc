@@ -13,30 +13,19 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
     <motion.article
     className={`
       relative flex flex-col h-full rounded-xl p-5 sm:p-6
-      bg-white/30 backdrop-blur-sm dark:bg-glass
-      border border-slate-200/50 dark:border-t dark:border-l dark:border-white/10 dark:border-b dark:border-r dark:border-white/5
-      shadow-[0_20px_50px_rgba(0,0,0,0.5)]
-      transition-colors duration-500
-      hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10
+      bg-white/70 dark:bg-slate-800/60 backdrop-blur-md
+      border border-slate-300 dark:border-slate-700
+      transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden
       ${isHighlight
         ? 'dark:border-trace/50'
         : ''
       }
     `}
-      /* MATCHING LANDING PAGE PHYSICS */
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      {isHighlight && (
-        <div
-          className="absolute inset-0 rounded-xl bg-gradient-to-br from-trace/5 to-quantum/5 pointer-events-none"
-          aria-hidden
-        />
-      )}
-      <div className="relative flex flex-col flex-grow">
+            <div className="relative flex flex-col flex-grow">
         <time className="text-sm font-medium text-accent dark:text-trace" dateTime={date}>
           {date}
         </time>
@@ -54,7 +43,7 @@ function EventCard({ title, date, description, tags, isHighlight = false }: Even
                   className={`
                     inline-block rounded-full px-3 py-1 text-xs font-medium
                     ${isHighlight
-                      ? 'bg-trace/20 text-trace border border-trace/30 dark:bg-trace/20 dark:text-trace dark:border-trace/30'
+                      ? 'bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20'
                       : 'bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20'
                     }
                   `}

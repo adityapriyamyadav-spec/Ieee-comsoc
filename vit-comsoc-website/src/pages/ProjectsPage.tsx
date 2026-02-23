@@ -45,12 +45,10 @@ function ProjectsPage() {
             {projects.map((project) => (
               <motion.article
                 key={project.id}
-                className="relative flex flex-col h-full rounded-xl p-6 bg-white/10 dark:bg-surface/50 backdrop-blur-md border border-slate-200/50 dark:border-white/10 shadow-[0_18px_45px_rgba(15,23,42,0.55)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ y: -5 }}
+                className="relative flex flex-col h-full rounded-xl p-5 sm:p-6 bg-white/70 dark:bg-slate-800/60 backdrop-blur-md border border-slate-300 dark:border-slate-700 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
               <div className="relative flex flex-col flex-grow">
                   <h2 className="mt-2 text-lg sm:text-xl font-bold text-text-light dark:text-white">
@@ -64,7 +62,7 @@ function ProjectsPage() {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="inline-flex items-center rounded-full border border-slate-200/60 dark:border-white/15 bg-white/40 dark:bg-void/60 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-100"
+                      className="inline-block rounded-full px-3 py-1 text-xs font-medium bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20"
                     >
                       {tech}
                     </span>

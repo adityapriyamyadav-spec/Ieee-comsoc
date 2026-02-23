@@ -63,25 +63,43 @@ function AboutUsPage() {
           viewport={{ once: true, margin: '-50px' }}
         >
           <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -5 }}
-            className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative flex flex-col h-full rounded-xl p-5 sm:p-6 bg-white/70 dark:bg-slate-800/60 backdrop-blur-md border border-slate-300 dark:border-slate-700 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden"
           >
-            <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-trace mb-3">Our Mission</h2>
-            <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
+            <h2 className="mt-2 text-lg sm:text-xl font-bold text-text-light dark:text-white">Our Mission</h2>
+            <p className="mt-2 text-sm text-text-light/80 dark:text-white/70 leading-relaxed flex-grow">
               To foster a community where budding engineers collaborate, experiment, and excel in both software and hardware realms—from embedded systems and networking, to coding and real-world problem solving.
             </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="inline-block rounded-full px-3 py-1 text-xs font-medium bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20">
+                Community
+              </span>
+              <span className="inline-block rounded-full px-3 py-1 text-xs font-medium bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20">
+                Innovation
+              </span>
+            </div>
           </motion.div>
 
           <motion.div
-            variants={itemVariants}
-            whileHover={{ y: -5 }}
-            className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative flex flex-col h-full rounded-xl p-5 sm:p-6 bg-white/70 dark:bg-slate-800/60 backdrop-blur-md border border-slate-300 dark:border-slate-700 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden"
           >
-            <h2 className="text-xl md:text-2xl font-semibold text-text-light dark:text-quantum mb-3">Our Vision</h2>
-            <p className="text-text-light/80 dark:text-slate-300 text-base leading-relaxed mb-2">
+            <h2 className="mt-2 text-lg sm:text-xl font-bold text-text-light dark:text-white">Our Vision</h2>
+            <p className="mt-2 text-sm text-text-light/80 dark:text-white/70 leading-relaxed flex-grow">
               To spark groundbreaking innovation in communications technology, building an ecosystem where future leaders drive change and shape the digital world of tomorrow.
             </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <span className="inline-block rounded-full px-3 py-1 text-xs font-medium bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20">
+                Leadership
+              </span>
+              <span className="inline-block rounded-full px-3 py-1 text-xs font-medium bg-accent/15 text-accent border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20">
+                Technology
+              </span>
+            </div>
           </motion.div>
         </motion.div>
 
@@ -102,17 +120,18 @@ function AboutUsPage() {
             {teamMembers.map((member) => (
               <motion.div
                 key={member.id}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="bg-white/40 backdrop-blur-md dark:bg-surface/50 border border-slate-200/50 dark:border-white/10 rounded-xl p-5 flex flex-col items-center text-center shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-colors duration-500 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-900/5 dark:hover:shadow-blue-500/10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="relative flex flex-col h-full rounded-xl p-5 sm:p-6 bg-white/70 dark:bg-slate-800/60 backdrop-blur-md border border-slate-300 dark:border-slate-700 transition-all duration-300 ease-out transform hover:-translate-y-1 hover:border-blue-500 hover:bg-white/90 dark:hover:border-blue-400 dark:hover:bg-slate-800/90 z-10 overflow-hidden"
               >
                 {/* Placeholder Avatar */}
                 <div className="w-16 h-16 rounded-full bg-void border-2 border-trace/30 flex items-center justify-center mb-4">
                   <span className="text-trace font-bold">{member.name.charAt(0)}</span>
                 </div>
-                <h3 className="text-lg font-semibold text-text-light dark:text-white">{member.name}</h3>
-                <p className="text-sm font-medium text-text-light dark:text-trace mt-1">{member.role}</p>
-                <p className="text-xs text-text-light/80 dark:text-slate-300 mt-2 bg-slate-200/60 dark:bg-void/50 px-2 py-1 rounded-md">{member.discipline}</p>
+                <h3 className="mt-2 text-lg sm:text-xl font-bold text-text-light dark:text-white">{member.name}</h3>
+                <p className="mt-2 text-sm text-text-light/80 dark:text-white/70 leading-relaxed flex-grow">{member.role}</p>
+                <p className="text-xs text-accent dark:text-trace mt-2 bg-accent/15 border border-accent/30 dark:bg-void/60 dark:text-trace/90 dark:border-trace/20 px-2 py-1 rounded-md">{member.discipline}</p>
               </motion.div>
             ))}
           </div>
