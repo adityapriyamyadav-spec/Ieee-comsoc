@@ -5,7 +5,7 @@ export interface EventCardProps {
   date: string;
   description: string;
   tags: string[];
-  isHighlight?: boolean;
+  isHighlight?: boolean;  
 }
 
 function EventCard({ title, date, description, tags, isHighlight = false }: EventCardProps) {

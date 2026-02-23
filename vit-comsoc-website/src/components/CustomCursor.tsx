@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 function CustomCursor() {
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -9,17 +10,38 @@ function CustomCursor() {
   const springY = useSpring(mouseY, { stiffness: 500, damping: 28 });
 
   useEffect(() => {
+    // Check if device supports touch
+    const checkTouchDevice = () => {
+      return (
+        'ontouchstart' in window ||
+        navigator.maxTouchPoints > 0 ||
+        // @ts-ignore - for older browsers
+        navigator.msMaxTouchPoints > 0
+      );
+    };
+
+    setIsTouchDevice(checkTouchDevice());
+
     const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX - 12);
       mouseY.set(event.clientY - 12);
     };
 
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    if (!isTouchDevice) {
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    }
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      if (!isTouchDevice) {
+        window.removeEventListener('mousemove', handleMouseMove);
+      }
     };
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, isTouchDevice]);
+
+  // Don't render cursor on touch devices
+  if (isTouchDevice) {
+    return null;
+  }
 
   return (
     <motion.div

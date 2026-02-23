@@ -80,3 +80,10 @@ html.dark, html.dark body {
     cursor: none !important;
   }
 }
+
+/* Restore default system cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  * { 
+    cursor: auto !important; 
+  }
+}
